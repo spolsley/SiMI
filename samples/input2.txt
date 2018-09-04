@@ -1,0 +1,23 @@
+REGISTERS
+R1 9
+	
+
+MEMORY
+0 8
+8 40
+16 60
+
+CODE
+      LD R1, 0(R0)
+      LD R2, 8(R1)
+	
+      DADD R3, R2, R1
+      SD R3, 24(R0)
+
+TARGET: SUBI R2, R2, #5
+      BNEZ R2, TARGET
+      DADDI R2, R2, #2000
+
+      SUBI R2, R2, #1000
+
+      DADDI R2, R2, #2000
